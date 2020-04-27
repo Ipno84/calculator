@@ -1,3 +1,5 @@
+import './assets/fonts/google-sans-cufonfonts-webfont/style.css';
+
 import * as serviceWorker from './serviceWorker';
 
 import App from './App';
