@@ -12,4 +12,9 @@ declare global {
     interface Theme extends DefaultTheme {
         colors: Colors;
     }
+
+    interface CalculatorStateType {
+        operation: string;
+        result: string;
+    }
 }
