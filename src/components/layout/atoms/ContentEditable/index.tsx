@@ -1,4 +1,22 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const animation = keyframes`
+    0%{
+        color: #777;
+    }
+    49%{
+        color: #777;
+    }
+    60%{
+        color: transparent;
+    }
+    99%{
+        color: transparent;
+    }
+    100%{
+        color: #777;
+    }
+`;
 
 const ContentEditable = styled.div`
     outline: 0;
@@ -18,6 +36,13 @@ const ContentEditable = styled.div`
         background-color: transparent;
         right: 2rem;
         font-size: 2.5rem;
+    }
+    &:focus[placeholder]:empty:before {
+        color: ${({ theme }) => theme.colors.black(0.8)};
+        content: '|';
+        font-size: 5rem;
+        font-weight: 100;
+        animation: ${animation} 1.2s infinite;
     }
 `;
 

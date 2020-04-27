@@ -1,11 +1,11 @@
 import AppContainer from './../../atoms/AppContainer';
 import Backspace from './../../atoms/Backspace';
 import Button from './../../atoms/Button';
-import ContentEditable from './../../atoms/ContentEditable';
 import DisplayContainer from './../../atoms/DisplayContainer';
 import DisplayOperation from './../../atoms/DisplayOperation';
 import DisplayOperationScroller from './../../atoms/DisplayOperationScroller';
 import NumericPadContainer from './../../atoms/NumericPadContainer';
+import OperationInput from './../../atoms/OperationInput';
 import OperatorsPadContainer from './../../atoms/OperatorsPadContainer';
 import PadContainer from './../../atoms/PadContainer';
 import React from 'react';
@@ -17,10 +17,7 @@ const Calculator: React.FC = () => {
             <DisplayContainer top={true}>
                 <DisplayOperationScroller>
                     <DisplayOperation>
-                        <ContentEditable
-                            placeholder='Type operation...'
-                            contentEditable={true}
-                        />
+                        <OperationInput />
                     </DisplayOperation>
                 </DisplayOperationScroller>
                 <Result>56</Result>
