@@ -11,6 +11,14 @@ const ContentEditable = styled.div`
     display: table-cell;
     vertical-align: middle;
     text-align: right;
+    &[placeholder]:empty:before {
+        content: attr(placeholder);
+        position: absolute;
+        color: ${({ theme }) => theme.colors.black(0.5)};
+        background-color: transparent;
+        right: 2rem;
+        font-size: 2.5rem;
+    }
 `;
 
 export default ContentEditable;

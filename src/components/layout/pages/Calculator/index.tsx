@@ -17,7 +17,10 @@ const Calculator: React.FC = () => {
             <DisplayContainer top={true}>
                 <DisplayOperationScroller>
                     <DisplayOperation>
-                        <ContentEditable contentEditable={true} />
+                        <ContentEditable
+                            placeholder='Type operation...'
+                            contentEditable={true}
+                        />
                     </DisplayOperation>
                 </DisplayOperationScroller>
                 <Result>56</Result>
