@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle<Props>`
         box-sizing: border-box;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        user-select: none;
     }
     #root {
         height: 100vh;

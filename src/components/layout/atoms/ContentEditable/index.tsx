@@ -25,10 +25,11 @@ const ContentEditable = styled.div`
     font-size: 6rem;
     line-height: 6rem;
     white-space: nowrap;
-    caret-color: ${({ theme }) => theme.colors.white(0)};
+    caret-color: ${({ theme }) => theme.colors.blue(0)};
     display: table-cell;
     vertical-align: middle;
     text-align: right;
+    position: relative;
     &[placeholder]:empty:before {
         content: attr(placeholder);
         position: absolute;

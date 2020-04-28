@@ -1,11 +1,21 @@
-import { Reducer, createStore } from 'redux';
+import { Reducer, applyMiddleware, createStore } from 'redux';
+import createSagaMiddleware, { Saga } from 'redux-saga';
 
+import CalculatorSaga from './../middlewares/CalculatorSaga';
+import composeEnhancers from './composeEnhancers';
 import createReducer from './createReducer';
+import { fork } from 'redux-saga/effects';
 import { persistStore } from 'redux-persist';
 import rootReducers from './../reducers';
 
+const sagaMiddleware = createSagaMiddleware();
+
 function configureStore() {
-    let store: any = createStore(createReducer({}));
+    let store: any = createStore(
+        createReducer({}),
+        undefined,
+        composeEnhancers(applyMiddleware(sagaMiddleware))
+    );
     let persistor = persistStore(store, null, () => {
         store.getState();
     });
@@ -19,8 +29,28 @@ function configureStore() {
         }
     };
 
+    (store as any).asyncSagas = {
+        CalculatorSaga,
+    };
+    (store as any).injectSaga = (key: string, asyncSaga: Saga<any[]>) => {
+        function* combinedSagas() {
+            yield fork(asyncSaga);
+        }
+        if (!(store as any).asyncSagas[key]) {
+            (store as any).asyncSagas[key] = asyncSaga;
+            sagaMiddleware.run(combinedSagas);
+            persistor.persist();
+        }
+    };
+
     return { store, persistor };
 }
 const { store, persistor } = configureStore();
+
+function* combinedSaga() {
+    yield fork(CalculatorSaga);
+}
+
+sagaMiddleware.run(combinedSaga);
 
 export { store, persistor };

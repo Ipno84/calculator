@@ -1,52 +1,29 @@
 import AppContainer from './../../atoms/AppContainer';
-import Backspace from './../../atoms/Backspace';
+import BackspaceButton from './../../atoms/BackspaceButton';
 import Button from './../../atoms/Button';
-import DisplayContainer from './../../atoms/DisplayContainer';
-import DisplayOperation from './../../atoms/DisplayOperation';
-import DisplayOperationScroller from './../../atoms/DisplayOperationScroller';
+import CommaButton from './../../atoms/CommaButton';
+import Display from './../../organisms/Display';
+import GetResultButton from './../../atoms/GetResultButton';
+import NumericButtons from './../../molecules/NumericButtons';
 import NumericPadContainer from './../../atoms/NumericPadContainer';
-import OperationInput from './../../atoms/OperationInput';
+import OperatorButtons from './../../molecules/OperatorButtons';
 import OperatorsPadContainer from './../../atoms/OperatorsPadContainer';
 import PadContainer from './../../atoms/PadContainer';
 import React from 'react';
-import Result from './../../atoms/Result';
 
 const Calculator: React.FC = () => {
     return (
         <AppContainer>
-            <DisplayContainer top={true}>
-                <DisplayOperationScroller>
-                    <DisplayOperation>
-                        <OperationInput />
-                    </DisplayOperation>
-                </DisplayOperationScroller>
-                <Result>56</Result>
-            </DisplayContainer>
+            <Display />
             <PadContainer>
                 <NumericPadContainer>
-                    <Button>1</Button>
-                    <Button>2</Button>
-                    <Button>3</Button>
-                    <Button>4</Button>
-                    <Button>5</Button>
-                    <Button>6</Button>
-                    <Button>7</Button>
-                    <Button>8</Button>
-                    <Button>9</Button>
-                    <Button>0</Button>
-                    <Button>,</Button>
-                    <Button>=</Button>
+                    <NumericButtons />
+                    <CommaButton />
+                    <GetResultButton />
                 </NumericPadContainer>
                 <OperatorsPadContainer>
-                    <Button full={true}>
-                        <Backspace />
-                    </Button>
-                    <Button>÷</Button>
-                    <Button>×</Button>
-                    <Button>-</Button>
-                    <Button>+</Button>
-                    <Button>(</Button>
-                    <Button>)</Button>
+                    <BackspaceButton />
+                    <OperatorButtons />
                 </OperatorsPadContainer>
             </PadContainer>
         </AppContainer>
