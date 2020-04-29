@@ -7,5 +7,4 @@ export const Config = {
     key: 'calculator',
     storage,
     debug: process.env.NODE_ENV === 'development',
-    blacklist: [CALCULATOR_REDUCER_NAME],
 };

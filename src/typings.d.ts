@@ -16,6 +16,7 @@ declare global {
     interface CalculatorStateType {
         operation: string;
         result: string;
+        results: GenericObject;
     }
 
     interface ExtendedInputEvent extends Event {
@@ -40,14 +41,9 @@ declare global {
         all?: boolean;
     }
 
-    interface CalculatorStoreType {
-        operation: string;
-        result: string;
-    }
-
     type CalculatorStoreName = 'calculator';
 
     interface Store {
-        calculator: CalculatorStoreType;
+        calculator: CalculatorStateType;
     }
 }

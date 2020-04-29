@@ -10,6 +10,7 @@ import { SUCCESS } from '../../constants/BaseConstants';
 const initialState: CalculatorStateType = {
     operation: '',
     result: '',
+    results: {},
 };
 
 export default (state = initialState, action: any) => {
@@ -34,13 +35,20 @@ export default (state = initialState, action: any) => {
                     ),
                 };
             return {
-                ...initialState,
+                ...state,
+                operation: initialState.operation,
+                result: initialState.result,
             };
         case GET_RESULT:
             if (state.result === '') return state;
             return {
+                ...state,
                 operation: state.result,
                 result: state.result,
+                results: {
+                    ...state.results,
+                    [state.operation]: state.result,
+                },
             };
         default:
             return state;
