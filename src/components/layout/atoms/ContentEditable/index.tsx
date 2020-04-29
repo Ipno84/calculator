@@ -35,7 +35,7 @@ const ContentEditable = styled.div`
         position: absolute;
         color: ${({ theme }) => theme.colors.black(0.5)};
         background-color: transparent;
-        right: 2rem;
+        right: 0;
         font-size: 2.5rem;
     }
     &:focus[placeholder]:empty:before {

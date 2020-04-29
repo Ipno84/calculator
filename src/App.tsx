@@ -6,6 +6,7 @@ import { Normalize } from 'styled-normalize';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import { Provider } from 'react-redux';
 import React from 'react';
+import Setup from './components/containers/Setup';
 import { ThemeProvider } from 'styled-components';
 import theme from './constants/ThemeConstants';
 
@@ -16,6 +17,7 @@ function App() {
                 <ThemeProvider theme={theme}>
                     <Normalize />
                     <GlobalStyle />
+                    <Setup />
                     <Calculator />
                 </ThemeProvider>
             </PersistGate>

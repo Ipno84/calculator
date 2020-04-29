@@ -1,6 +1,5 @@
 import AppContainer from './../../atoms/AppContainer';
 import BackspaceButton from './../../atoms/BackspaceButton';
-import Button from './../../atoms/Button';
 import CommaButton from './../../atoms/CommaButton';
 import Display from './../../organisms/Display';
 import GetResultButton from './../../atoms/GetResultButton';

@@ -13,6 +13,9 @@ const Button = styled.button<Props>`
     background-color: ${({ theme }) => theme.colors.dark(0)};
     font-size: 1.6rem;
     border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     ${NumericPadContainer} > & {
         flex: 1 0 26%;
     }
@@ -25,8 +28,10 @@ const Button = styled.button<Props>`
                 flex: 1 1 100%;
             `}
     }
-    &:hover {
-        background-color: ${({ theme }) => theme.colors.dark(0.1)};
+    @media (hover: hover) {
+        &:hover {
+            background-color: ${({ theme }) => theme.colors.dark(0.1)};
+        }
     }
     &:active {
         background-color: ${({ theme }) => theme.colors.dark(0.2)};
