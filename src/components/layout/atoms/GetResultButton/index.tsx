@@ -9,7 +9,11 @@ const GetResultButton: React.FC = () => {
     const getResult = useCallback(() => dispatch(getResultAction()), [
         dispatch,
     ]);
-    return <Button onClick={() => getResult()}>=</Button>;
+    return (
+        <Button data-testid='equalButton' onClick={() => getResult()}>
+            =
+        </Button>
+    );
 };
 
 export default GetResultButton;

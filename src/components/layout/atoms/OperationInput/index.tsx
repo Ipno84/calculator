@@ -25,6 +25,7 @@ const OperationInput: React.FC = () => {
     }, [value]);
     return (
         <ContentEditable
+            data-testid='contentEditable'
             placeholder='Type operation...'
             contentEditable={true}
             onKeyDown={(e) => {

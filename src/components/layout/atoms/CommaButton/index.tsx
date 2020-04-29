@@ -9,7 +9,11 @@ const CommaButton: React.FC = () => {
     const typeInput = useCallback(() => dispatch(typeInputAction(',')), [
         dispatch,
     ]);
-    return <Button onClick={() => typeInput()}>,</Button>;
+    return (
+        <Button data-testid='commaButton' onClick={() => typeInput()}>
+            ,
+        </Button>
+    );
 };
 
 export default CommaButton;

@@ -14,7 +14,12 @@ const BackspaceButton: React.FC = () => {
     );
     const onLongPress = useLongPress(() => deleteOperation(true), 600);
     return (
-        <Button {...onLongPress} onClick={() => deleteOperation()} full={true}>
+        <Button
+            {...onLongPress}
+            data-testid='backspaceButton'
+            onClick={() => deleteOperation()}
+            full={true}
+        >
             <Backspace />
         </Button>
     );

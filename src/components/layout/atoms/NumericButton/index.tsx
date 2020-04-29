@@ -11,7 +11,14 @@ const NumericButton: React.FC<Props> = ({ number }) => {
         dispatch,
         number,
     ]);
-    return <Button onClick={() => typeInput()}>{number}</Button>;
+    return (
+        <Button
+            data-testid={`${number}_numericButton`}
+            onClick={() => typeInput()}
+        >
+            {number}
+        </Button>
+    );
 };
 
 export default NumericButton;

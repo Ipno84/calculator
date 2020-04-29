@@ -7,6 +7,7 @@ import TreeItemsReferences from './../../../../helpers/TreeItemsReferences';
 const OperationDisplay: React.FC = () => {
     return (
         <DisplayOperationScroller
+            data-testid='operationScroller'
             ref={(ref) =>
                 TreeItemsReferences.addReference(
                     'DisplayOperationScroller',

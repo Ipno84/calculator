@@ -7,7 +7,7 @@ const OperationResult: React.FC = () => {
     const result = useSelector((state: Store) =>
         getCalculatorResultSelector(state)
     );
-    return <Result>{result}</Result>;
+    return <Result data-testid='operationResult'>{result}</Result>;
 };
 
 export default OperationResult;

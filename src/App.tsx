@@ -3,7 +3,7 @@ import { persistor, store } from './state/store';
 import Calculator from './components/layout/pages/Calculator';
 import GlobalStyle from './components/containers/GlobalStyle';
 import { Normalize } from 'styled-normalize';
-import { PersistGate } from 'redux-persist/es/integration/react';
+import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import React from 'react';
 import Setup from './components/containers/Setup';

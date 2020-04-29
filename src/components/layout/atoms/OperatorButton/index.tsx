@@ -11,7 +11,14 @@ const OperatorButton: React.FC<Props> = ({ operator, label }) => {
         dispatch,
         operator,
     ]);
-    return <Button onClick={() => typeInput()}>{label}</Button>;
+    return (
+        <Button
+            data-testid={`${operator}_operatorButton`}
+            onClick={() => typeInput()}
+        >
+            {label}
+        </Button>
+    );
 };
 
 export default OperatorButton;
